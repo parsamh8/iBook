@@ -1,5 +1,5 @@
-import models from '../models/index.js';
-const User = models.User
+import User from '../models/index.js';
+// const User = models.User
 import { signToken, AuthenticationError } from '../utils/auth.js'; 
 
 // // Define types for the arguments
