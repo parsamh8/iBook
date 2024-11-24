@@ -1,7 +1,7 @@
 import type { Request, Response } from 'express';
 import express from 'express';
 const router = express.Router();
-
+// import path required for path.__dirname
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 const __filename = fileURLToPath(import.meta.url);
