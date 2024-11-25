@@ -1,16 +1,12 @@
 import { gql } from '@apollo/client';
 
-// export const LOGIN_USER = gql`
-//   mutation login($email: String!, $password: String!) {
-//     login(email: $email, password: $password) {
-//       token
-//       user {
-//         _id
-//         username
-//       }
-//     }
-//   }
-// `;
+export const LOGIN_USER = gql`
+  mutation login($email: String!, $password: String!) {
+    login(email: $email, password: $password) {
+      token
+  }
+}
+`;
 
 export const CREATE_USER = gql`
 mutation createUser($username: String!, $email: String!, $password: String!) {
@@ -20,33 +16,31 @@ mutation createUser($username: String!, $email: String!, $password: String!) {
 }
 `;
 
-// export const ADD_THOUGHT = gql`
-//   mutation AddThought($input: ThoughtInput!) {
-//     addThought(input: $input) {
-//       _id
-//       thoughtText
-//       thoughtAuthor
-//       createdAt
-//       comments {
-//         _id
-//         commentText
-//       }
+// export const SAVE_BOOK = gql`
+//   mutation SaveBook($bookId: ID!, $authors: [String]!, $description: String!, $title: String!, $image: String!, $link: String) {
+//     saveBook(bookId: $bookId, authors: $authors, description: $description, title: $title, image: $image, link: $link) {
+//       bookCount
+//       savedBooks {
+//       bookId
+//       title
 //     }
 //   }
+// }
 // `;
 
-// export const ADD_COMMENT = gql`
-//   mutation addComment($thoughtId: ID!, $commentText: String!) {
-//     addComment(thoughtId: $thoughtId, commentText: $commentText) {
-//       _id
-//       thoughtText
-//       thoughtAuthor
-//       createdAt
-//       comments {
-//         _id
-//         commentText
-//         createdAt
+// export const REMOVE_BOOK = gql`
+//   mutation RemoveBook($bookId: ID!) {
+//     removeBook(bookId: $bookId) {
+//       username
+//       email
+//       savedBooks {
+//         authors
+//         description
+//         title
+//         image
+//         link
 //       }
-//     }
+//       bookCount
 //   }
+// }
 // `;
