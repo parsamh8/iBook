@@ -2,7 +2,7 @@ import { useState } from 'react';
 import type { ChangeEvent, FormEvent } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
 import { useMutation } from '@apollo/client';
-import { ADD_USER } from '../utils/mutations';
+import { CREATE_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 
 // biome-ignore lint/correctness/noEmptyPattern: <explanation>
@@ -15,7 +15,7 @@ const SignupForm = () => {
   });
 
   // find and add the user from mutation file
-  const [addUser] = useMutation(ADD_USER);
+  const [addUser] = useMutation(CREATE_USER);
   // form validation
   const [validated] = useState(false);
   // form alert
@@ -38,7 +38,11 @@ const SignupForm = () => {
 
     try {
       const { data } = await addUser({
-        variables: { input: { ...formState } },
+        variables: {
+          "username": formState.username,
+          "email": formState.email,
+          "password": formState.password,
+        },
       });
 
       if (!data) {
@@ -47,7 +51,7 @@ const SignupForm = () => {
 
 
       // get the token from server response
-      const { token } = data.addUser;
+      const { token } = data.createUser;
       Auth.login(token);
     } catch (err) {
       console.error(err);
