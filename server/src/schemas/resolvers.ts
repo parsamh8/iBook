@@ -44,10 +44,12 @@ const resolvers = {
     },
 
     saveBook: async (_parent: any, args: any, context: any) => {
+      console.log(args);
+      
       try {
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $addToSet: { savedBooks: args } },
+          { $addToSet: { savedBooks: args.bookData } },
           { new: true, runValidators: true }
         );
         return (updatedUser);
