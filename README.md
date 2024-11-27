@@ -21,7 +21,7 @@
 
 ## Installation
 
-Heres a [Link](https://drive.google.com/file/d/1xi2nPvWCBrTdXrDoWHzAJo5vqzafGetr/view) to deployed application.
+Heres a [Link](https://ibook-mj19.onrender.com/) to deployed application.
 
 
 ## Usage
