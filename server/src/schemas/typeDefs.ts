@@ -30,7 +30,6 @@ const typeDefs = `
     title: String
   }
 
-
   type Query {
     getSingleUser: User
   }
@@ -40,8 +39,8 @@ const typeDefs = `
     login(email: String!, password: String!): Auth
     saveBook(bookData: BookInput): User
     deleteBook(bookId: String): User
-
   }
+
 `;
 
 export default typeDefs;
