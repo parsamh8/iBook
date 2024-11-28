@@ -37,7 +37,7 @@ On the home page, users can search for books using the search bar. Logged-in use
 
 ## Tests
 
-Application tested with noSQL MonogoDB and Apollo Server.
+Application tested with noSQL MonogoDB Compass and Apollo Server.
 
 
 ## License
